@@ -5,5 +5,11 @@
     background-color: #fff;
     height: 36px;
     width: 70%;
+    border-radius: 0px !important;
+    color: $font-dark !important;
   }
+}
+
+.MuiOutlinedInput-notchedOutline {
+  border-color: #fff !important;
 }

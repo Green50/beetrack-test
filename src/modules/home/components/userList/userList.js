@@ -12,7 +12,6 @@ import React from "react";
 import Paper from "@mui/material/Paper";
 import CardUser from "../cardUser/cardUser";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
-import { typography } from "@mui/system";
 
 const UserList = () => {
   return (
@@ -36,7 +35,7 @@ const UserList = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {[1, 2, 3, 4, 5].map((row) => (
+            {[1, 2, 3, 4, 5, 6, 7, 8].map((row) => (
               <TableRow
                 className="table-container__row"
                 key={row.name}

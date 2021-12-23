@@ -28,12 +28,4 @@ const Menu = () => {
   );
 };
 
-const style = {
-  input: {
-    backgroundColor: "#fff",
-    height: "36px",
-    width: "70%",
-  },
-};
-
 export default Menu;

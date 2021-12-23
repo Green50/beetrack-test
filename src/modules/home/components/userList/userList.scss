@@ -11,13 +11,14 @@
 
   &__desc {
     color: $font-dark !important;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   }
 }
 
 .page {
   margin-top: 12px;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
   cursor: pointer;
   color: $font-grey-light;
