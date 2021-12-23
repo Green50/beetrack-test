@@ -3,21 +3,10 @@ import { Button } from "@mui/material";
 
 const CustomButton = ({ children, icon }) => {
   return (
-    <Button
-      variant="contained"
-      style={styles.button}
-      startIcon={icon}
-      className="xd"
-    >
+    <Button className="button" variant="contained" startIcon={icon}>
       {children}
     </Button>
   );
-};
-
-const styles = {
-  button: {
-    backgroundColor: "#FAB43C",
-  },
 };
 
 export default CustomButton;

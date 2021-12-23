@@ -1,0 +1,29 @@
+.table-container {
+  &__head {
+    color: $font-dark !important;
+    font-weight: bold !important;
+  }
+
+  &__body {
+    border-right: $border-light 1px solid;
+    padding: 0 !important;
+  }
+
+  &__desc {
+    color: $font-dark !important;
+  }
+}
+
+.page {
+  margin-top: 12px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  cursor: pointer;
+  color: $font-grey-light;
+
+  &__icon {
+    color: $primary;
+    margin-left: 12px;
+  }
+}

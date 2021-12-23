@@ -1,0 +1,16 @@
+// colors
+@import "./colors.scss";
+
+// components
+@import "../components/button/button.scss";
+
+// Modules
+@import "../modules/home/components/menu/menu.scss";
+@import "../modules/home/components/userList/userList.scss";
+@import "../modules/home/components/cardUser/cardUser.scss";
+
+// Global
+body,
+html {
+  background-color: $background-grey-light;
+}
