@@ -4,6 +4,14 @@
     font-weight: bold !important;
   }
 
+  &__row:hover {
+    cursor: pointer;
+
+    .cardUser__delete {
+      display: block;
+    }
+  }
+
   &__body {
     border-right: $border-light 1px solid;
     padding: 0 !important;
@@ -15,16 +23,28 @@
   }
 }
 
-.page {
-  margin-top: 12px;
+.paginator {
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  cursor: pointer;
-  color: $font-grey-light;
+  flex-direction: row;
+  justify-content: space-between;
 
+  &__page {
+    margin-top: 12px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    cursor: pointer;
+    color: $font-grey-light;
+  }
   &__icon {
     color: $primary;
+  }
+
+  &__icon--next {
     margin-left: 12px;
+  }
+
+  &__icon--previous {
+    margin-right: 12px;
   }
 }

@@ -1,12 +1,12 @@
 .menu {
   margin-bottom: 12px;
-
   &__input {
     background-color: #fff;
     height: 36px;
     width: 70%;
     border-radius: 0px !important;
     color: $font-dark !important;
+    border: 1px solid #fff !important;
   }
 }
 

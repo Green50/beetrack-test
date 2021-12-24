@@ -1,9 +1,14 @@
 import React from "react";
 import { Button } from "@mui/material";
 
-const CustomButton = ({ children, icon }) => {
+const CustomButton = ({ children, icon, onClick }) => {
   return (
-    <Button className="button" variant="contained" startIcon={icon}>
+    <Button
+      onClick={onClick}
+      className="button"
+      variant="contained"
+      startIcon={icon}
+    >
       {children}
     </Button>
   );

@@ -1,0 +1,31 @@
+.modal-header {
+  width: 500px;
+  border-bottom: 1px solid $border-grey-light;
+  background-color: $background-light;
+  padding: 20px 20px;
+  font-weight: bold !important;
+  color: $font-dark;
+}
+
+.add-user-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 32px 70px 50px 70px;
+
+  &__input {
+    margin-bottom: 10px;
+    padding: 0px 5px !important;
+  }
+
+  &__label::after {
+    content: "*";
+    color: orange;
+  }
+
+  &__button {
+    width: 50%;
+    align-self: center;
+    margin-top: 40px !important;
+  }
+}

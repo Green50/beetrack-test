@@ -3,10 +3,10 @@ import { Grid, OutlinedInput } from "@mui/material";
 import CustomButton from "../../../../components/button/button";
 import { AddCircle, Search } from "@mui/icons-material";
 
-const Menu = () => {
+const Menu = ({ addUser }) => {
   return (
     <Grid container className="menu">
-      <Grid xs={6}>
+      <Grid item xs={6}>
         <OutlinedInput
           className="menu__input"
           placeholder="Contacto nuevo..."
@@ -16,13 +16,16 @@ const Menu = () => {
         />
       </Grid>
       <Grid
+        item
         xs={6}
         sx={{
           display: "flex",
           justifyContent: "flex-end",
         }}
       >
-        <CustomButton icon={<AddCircle />}>Nuevo Contacto</CustomButton>
+        <CustomButton onClick={addUser} icon={<AddCircle />}>
+          Nuevo Contacto
+        </CustomButton>
       </Grid>
     </Grid>
   );

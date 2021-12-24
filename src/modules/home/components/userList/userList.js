@@ -11,7 +11,7 @@ import {
 import React from "react";
 import Paper from "@mui/material/Paper";
 import CardUser from "../cardUser/cardUser";
-import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
+import { ArrowCircleRight, ArrowCircleLeft } from "@mui/icons-material";
 
 const UserList = () => {
   return (
@@ -38,7 +38,7 @@ const UserList = () => {
             {[1, 2, 3, 4, 5, 6, 7, 8].map((row) => (
               <TableRow
                 className="table-container__row"
-                key={row.name}
+                key={row}
                 sx={{ "&:last-child td, &:last-child th": { borderBottom: 0 } }}
               >
                 <TableCell className="table-container__body" component="th">
@@ -54,11 +54,20 @@ const UserList = () => {
           </TableBody>
         </Table>
       </TableContainer>
-      <Box className="page">
-        <Typography variant="body2" fontWeight={"bold"}>
-          Siguiente página
-        </Typography>
-        <ArrowCircleRightIcon className="page__icon" />
+      <Box className="paginator">
+        <Box className="paginator__page">
+          <ArrowCircleLeft className="paginator__icon paginator__icon--previous" />
+          <Typography variant="body2" fontWeight={"bold"}>
+            Página anterior
+          </Typography>
+        </Box>
+
+        <Box className="paginator__page">
+          <Typography variant="body2" fontWeight={"bold"}>
+            Siguiente página
+          </Typography>
+          <ArrowCircleRight className="paginator__icon paginator__icon--next" />
+        </Box>
       </Box>
     </>
   );
