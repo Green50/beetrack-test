@@ -12,12 +12,12 @@ import Header from "../../components/header/header";
 import Menu from "./components/menu/menu";
 import UserList from "./components/userList/userList";
 
-const HomeLayout = ({ addUser, modal }) => {
+const HomeLayout = ({ addUser, modal, loading, error, data }) => {
   return (
     <Container maxWidth="lg" sx={{ paddingBottom: "32px" }}>
       <Header />
-      <Menu addUser={addUser} />
-      <UserList />
+      <Menu loading={loading} addUser={addUser} />
+      <UserList loading={loading} data={data} />
       <Dialog open={modal} onClose={addUser}>
         <Box flexDirection={"column"}>
           <Typography className="modal-header">

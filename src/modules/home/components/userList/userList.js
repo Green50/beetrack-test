@@ -7,14 +7,15 @@ import {
   TableRow,
   Box,
   Typography,
+  Skeleton,
 } from "@mui/material";
 import React from "react";
 import Paper from "@mui/material/Paper";
 import CardUser from "../cardUser/cardUser";
 import { ArrowCircleRight, ArrowCircleLeft } from "@mui/icons-material";
 
-const UserList = () => {
-  return (
+const UserList = ({ loading, data }) => {
+  return !loading ? (
     <>
       <TableContainer component={Paper} className="table-container">
         <Table aria-label="simple table">
@@ -35,19 +36,17 @@ const UserList = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((row) => (
+            {data.map((row) => (
               <TableRow
                 className="table-container__row"
-                key={row}
+                key={row.id}
                 sx={{ "&:last-child td, &:last-child th": { borderBottom: 0 } }}
               >
                 <TableCell className="table-container__body" component="th">
-                  <CardUser />
+                  <CardUser name={row.name} img={row.photo} />
                 </TableCell>
                 <TableCell className="table-container__desc">
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page when looking at its layout.
-                  The point of using Lorem Ipsum is that it has a more-or-less
+                  {row.description}
                 </TableCell>
               </TableRow>
             ))}
@@ -68,6 +67,31 @@ const UserList = () => {
           </Typography>
           <ArrowCircleRight className="paginator__icon paginator__icon--next" />
         </Box>
+      </Box>
+    </>
+  ) : (
+    <>
+      <Skeleton
+        variant="rectangular"
+        width={"100%"}
+        height={"500px"}
+      ></Skeleton>
+      <Box
+        display={"flex"}
+        flexDirection={"row"}
+        justifyContent={"space-between"}
+        sx={{ paddingY: "30px" }}
+      >
+        <Skeleton
+          variant="rectangular"
+          width={"180px"}
+          height={"30px"}
+        ></Skeleton>
+        <Skeleton
+          variant="rectangular"
+          width={"180px"}
+          height={"30px"}
+        ></Skeleton>
       </Box>
     </>
   );

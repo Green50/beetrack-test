@@ -1,13 +1,13 @@
-import { Typography } from "@mui/material";
+import { Avatar, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 
-const CardUser = () => {
+const CardUser = ({ name, img }) => {
   return (
     <Box className="cardUser">
-      <Box className="cardUser__img"></Box>
+      <Avatar src={img} className="cardUser__img"></Avatar>
       <Box className="cardUser__name">
-        <Typography variant="subtitle1">Cristopher Herrera </Typography>
+        <Typography variant="subtitle1">{name}</Typography>
         <Typography
           display="none"
           className="cardUser__delete"
