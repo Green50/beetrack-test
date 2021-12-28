@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Prueba Técnica Beetrack
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![React](https://res.cloudinary.com/practicaldev/image/fetch/s--fced_LNQ--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/1zg83mt0lo13dfmff1cr.png)
 
-## Available Scripts
+## Descripción
 
-In the project directory, you can run:
+Prueba técnica realizada para beetrack en la cual consiste en un panel de administración de usuarios que permite listar, paginar. agregar y eliminar usuarios [Prueba Técnica](https://github.com/Beetrack/frontend-test). La llamada a los servicios es mediante servicios REST que están en un entorno local ejecutado con `node server`, en el cual, consta con breve documentación en el inicio de la aplicación.
 
-### `npm start`
+## Env
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Actualmente se está trabajando solo con un ambiente de desarrollo que es `.env.development` en el cual tiene la configuración de la url base de los servicios.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Estructura del proyecto
 
-### `npm test`
+- Components: Carpeta en donde se encuentran los componentes globales de la aplicación
+- Config: Configuraciones globales de la aplicación
+- Modules: Base donde se encuentra el desarrollo de los modulos de la aplicación
+- Redux: Carpeta donde se encuentra la llamada a redux (ducks)
+- Sass: Carpeta donde se encuentran los archivos Sass la aplicación. El archivo global.scss llama a los archivos scss de otros componentes
+- Services: Carpeta donde se almacena la llamada a los servicios de la aplicación
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Comandos
 
-### `npm run build`
+- `start`: Permite el inicio de la aplicación en el puerto base 3000
+- `start:mac`: Permite el inicio de la aplicación en el puerto base 3001, ya que el servidor se abre por defecto en el 3000
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Técnologias
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- React 17.0.2
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Librerías
 
-### `npm run eject`
+- Axios
+- Material UI
+- Redux
+- Redux thunk
+- Sass
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Herramientas
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Prettier
+- Markdown Preview
+- Git
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Colaboradores
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Cristopher Herrera
