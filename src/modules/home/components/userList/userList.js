@@ -13,8 +13,12 @@ import React from "react";
 import Paper from "@mui/material/Paper";
 import CardUser from "../cardUser/cardUser";
 import { ArrowCircleRight, ArrowCircleLeft } from "@mui/icons-material";
+import { useSelector } from "react-redux";
 
-const UserList = ({ loading, data }) => {
+const UserList = ({ loading, data, nextPage, backPage, handleDelete }) => {
+  const { actuallyPage, lastPage } = useSelector((state) => state.HomeReducers);
+  console.log(actuallyPage, "actuallyPage");
+  console.log(lastPage, "lastPage");
   return !loading ? (
     <>
       <TableContainer component={Paper} className="table-container">
@@ -41,6 +45,7 @@ const UserList = ({ loading, data }) => {
                 className="table-container__row"
                 key={row.id}
                 sx={{ "&:last-child td, &:last-child th": { borderBottom: 0 } }}
+                onClick={() => handleDelete(row.id)}
               >
                 <TableCell className="table-container__body" component="th">
                   <CardUser name={row.name} img={row.photo} />
@@ -53,19 +58,28 @@ const UserList = ({ loading, data }) => {
           </TableBody>
         </Table>
       </TableContainer>
+
       <Box className="paginator">
-        <Box className="paginator__page">
-          <ArrowCircleLeft className="paginator__icon paginator__icon--previous" />
-          <Typography variant="body2" fontWeight={"bold"}>
-            Página anterior
-          </Typography>
+        <Box onClick={backPage} className="paginator__page">
+          {actuallyPage <= lastPage && actuallyPage > 1 && (
+            <>
+              <ArrowCircleLeft className="paginator__icon paginator__icon--previous" />
+              <Typography variant="body2" fontWeight={"bold"}>
+                Página anterior
+              </Typography>
+            </>
+          )}
         </Box>
 
-        <Box className="paginator__page">
-          <Typography variant="body2" fontWeight={"bold"}>
-            Siguiente página
-          </Typography>
-          <ArrowCircleRight className="paginator__icon paginator__icon--next" />
+        <Box onClick={nextPage} className="paginator__page">
+          {actuallyPage !== lastPage && (
+            <>
+              <Typography variant="body2" fontWeight={"bold"}>
+                Siguiente página
+              </Typography>
+              <ArrowCircleRight className="paginator__icon paginator__icon--next" />
+            </>
+          )}
         </Box>
       </Box>
     </>

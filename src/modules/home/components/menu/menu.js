@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Grid, OutlinedInput, Skeleton } from "@mui/material";
 import { AddCircle, Search } from "@mui/icons-material";
 
-const Menu = ({ addUser, loading }) => (
+const Menu = ({ addUser, loading, handleChangeText, textValue }) => (
   <Grid container className="menu">
     <Grid item xs={6}>
       {loading ? (
@@ -13,6 +13,8 @@ const Menu = ({ addUser, loading }) => (
         ></Skeleton>
       ) : (
         <OutlinedInput
+          onChange={handleChangeText}
+          value={textValue}
           className="menu__input"
           placeholder="Contacto nuevo..."
           startAdornment={
