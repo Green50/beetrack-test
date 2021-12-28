@@ -72,7 +72,7 @@ const UserList = ({ loading, data, nextPage, backPage, handleDelete }) => {
         </Box>
 
         <Box onClick={nextPage} className="paginator__page">
-          {actuallyPage !== lastPage && (
+          {actuallyPage < lastPage && (
             <>
               <Typography variant="body2" fontWeight={"bold"}>
                 Siguiente página

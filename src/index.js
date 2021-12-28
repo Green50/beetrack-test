@@ -1,12 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider, useSelector } from "react-redux";
 import App from "./App";
+import generateStore from "./store";
+
 import reportWebVitals from "./reportWebVitals";
 import "./sass/global.scss";
 
+const store = generateStore();
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );

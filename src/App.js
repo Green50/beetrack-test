@@ -1,18 +1,31 @@
+import { useState, useEffect } from "react";
 import Home from "./modules/home/home.screen";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "./material.styles";
-import { Provider } from "react-redux";
-import generateStore from "./store";
-
-const store = generateStore();
+import { useSelector, useDispatch } from "react-redux";
+import ModalError from "./components/modal-error/moda-error";
+import { getErrorActions } from "./redux/main.reducers";
 
 const App = () => {
+  const dispatch = useDispatch();
+  const [openModal, setOpenModal] = useState(false);
+  const { error } = useSelector((state) => state.MainReducers);
+  const handleCloseModal = () => {
+    setOpenModal(!openModal);
+    dispatch(getErrorActions(false));
+  };
+
+  useEffect(() => {
+    if (error) {
+      setOpenModal(true);
+    }
+  }, [error]);
+
   return (
-    <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <Home />
-      </ThemeProvider>
-    </Provider>
+    <ThemeProvider theme={theme}>
+      <Home />
+      <ModalError openModal={openModal} handleCloseModal={handleCloseModal} />
+    </ThemeProvider>
   );
 };
 

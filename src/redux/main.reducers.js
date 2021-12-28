@@ -1,6 +1,6 @@
 // Initial State
 const initialState = {
-  error: "",
+  error: false,
 };
 
 //Types
@@ -20,9 +20,9 @@ export default function mainReducers(state = initialState, action) {
 }
 
 // Actions
-export const getError = (msj) => (dispatch) => {
+export const getErrorActions = (status) => (dispatch) => {
   dispatch({
     type: GET_ERROR,
-    payload: msj,
+    payload: status,
   });
 };
