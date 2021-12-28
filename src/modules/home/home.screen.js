@@ -99,9 +99,8 @@ const HomeScreen = () => {
       ]);
       setData(response[1]);
       setmodal(!modal);
+      setTextValue("");
       dispatch(getDataHomeActions(response[0].length));
-      // En caso de encontrarse sin páginas se le suma 1 para que no aparezca el botón next
-      // if (actuallyPage <= 0) dispatch(nexPageActions());
     } catch (error) {
       dispatch(getErrorActions(true));
     }
