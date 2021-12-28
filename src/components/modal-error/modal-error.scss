@@ -1,0 +1,15 @@
+.modal-error {
+  &__title {
+    color: $font-danger;
+  }
+
+  &__icon {
+    color: $font-danger !important;
+    margin-left: 6px;
+  }
+
+  .MuiDialog-paper {
+    border-radius: 12px !important;
+    padding: 24px !important;
+  }
+}
