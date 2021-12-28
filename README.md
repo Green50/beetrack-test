@@ -21,6 +21,7 @@ Actualmente se está trabajando solo con un ambiente de desarrollo que es `.env.
 
 ## Comandos
 
+- `yarn install`: Para bajar todas las dependencias necesarias para que el proyecto se ejecute correctamente.
 - `start`: Permite el inicio de la aplicación en el puerto base 3000
 - `start:mac`: Permite el inicio de la aplicación en el puerto base 3001, ya que el servidor se abre por defecto en el 3000
 
