@@ -16,7 +16,7 @@ const Menu = ({ addUser, loading, handleChangeText, textValue }) => (
           onChange={handleChangeText}
           value={textValue}
           className="menu__input"
-          placeholder="Contacto nuevo..."
+          placeholder="Buscar contacto..."
           startAdornment={
             <Search sx={{ marginRight: "12px", color: "#FAB43C" }} />
           }

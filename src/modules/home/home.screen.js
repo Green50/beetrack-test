@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   nexPageActions,
@@ -49,30 +49,24 @@ const HomeScreen = () => {
   // Método para avanzar de página
   const nextPage = async () => {
     try {
-      setLoading(true);
       const response = await getUserService({ limit, page: actuallyPage + 1 });
       setData(response);
       setTextValue("");
       dispatch(nexPageActions());
     } catch (error) {
       dispatch(getErrorActions(true));
-    } finally {
-      setLoading(false);
     }
   };
 
   // Método para retroceder de página
   const backPage = async () => {
     try {
-      setLoading(true);
       const response = await getUserService({ limit, page: actuallyPage - 1 });
       setData(response);
       setTextValue("");
       dispatch(backPageActions());
     } catch (error) {
       dispatch(getErrorActions(true));
-    } finally {
-      setLoading(false);
     }
   };
 

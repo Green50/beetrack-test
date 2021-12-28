@@ -17,8 +17,6 @@ import { useSelector } from "react-redux";
 
 const UserList = ({ loading, data, nextPage, backPage, handleDelete }) => {
   const { actuallyPage, lastPage } = useSelector((state) => state.HomeReducers);
-  console.log(actuallyPage, "actuallyPage");
-  console.log(lastPage, "lastPage");
   return !loading ? (
     <>
       <TableContainer component={Paper} className="table-container">
